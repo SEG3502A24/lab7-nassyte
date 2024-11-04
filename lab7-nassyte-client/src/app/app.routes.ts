@@ -6,8 +6,8 @@ import { BooksComponent } from "./books/books.component";
 import { BookComponent } from "./books/book/book.component";
 import { LoginComponent } from "./login/login.component";
 import { AdminComponent } from "./admin/admin.component";
+import { AuthorsComponent } from './authors/authors.component';  // Import AuthorsComponent here
 import { loggedInGuard } from "./logged-in.guard";
-import { AuthorComponent } from "./authors/author.component";  // Import the new Author component
 
 const booksRoutes: Routes = [
   { path: ':id', component: BookComponent }
@@ -17,7 +17,7 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'authors', component: AuthorComponent },  // Added missing comma here
+  { path: 'authors', component: AuthorsComponent },  // Use AuthorsComponent here
   { path: 'login', component: LoginComponent },
   {
     path: 'admin',

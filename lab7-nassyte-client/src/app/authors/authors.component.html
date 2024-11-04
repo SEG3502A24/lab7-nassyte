@@ -1,21 +1,21 @@
 <div class="container">
   <h2>Find Author</h2>
 
-  <form (submit)="fetchAuthor()">
+  <form (submit)="fetchAuthor($event)">
     <label for="authorId">Author ID:</label>
     <input type="text" (input)="updateAuthorId($event)" id="authorId" required />
     <button type="submit">Search</button>
   </form>
 
-  
-  <div *ngIf="author">
+  <!-- Display author information if found -->
+  <div [hidden]="!author">
     <h3>Author Details</h3>
-    <p><strong>First Name:</strong> {{ author.firstName }}</p>
-    <p><strong>Last Name:</strong> {{ author.lastName }}</p>
+    <p><strong>First Name:</strong> {{ author?.firstName }}</p>
+    <p><strong>Last Name:</strong> {{ author?.lastName }}</p>
   </div>
 
-  
-  <div *ngIf="notFound">
+  <!-- Display a not found message if author doesn't exist -->
+  <div [hidden]="!notFound">
     <p>Author not found.</p>
   </div>
 </div>
