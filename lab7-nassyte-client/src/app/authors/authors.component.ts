@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BooksService } from '../books/service/books.service';
-import { Author } from '../books/model/book';  // Assuming the Author model is in book.ts
+import { Author } from '../books/model/book';  
 
 @Component({
   selector: 'app-author',
@@ -15,13 +15,13 @@ export class AuthorComponent {
 
   constructor(private booksService: BooksService) {}
 
-  // Method to update the authorId based on input
+  
   updateAuthorId(event: Event) {
     const input = event.target as HTMLInputElement;
     this.authorId = input.value;
   }
 
-  // Method to fetch author by ID
+  
   fetchAuthor() {
     this.booksService.getAuthorById(this.authorId).subscribe({
       next: (data) => {
